@@ -22,13 +22,7 @@ jobs:
       uses: Azure/cli@1.0.4
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name stjbtazureresumeprod --destination '$web' --source frontend
-    - name: Copy function code files
-      uses: Azure/cli@1.0.4
-      with:
-        inlineScript: |
-          az storage file upload --account-name stjbtazureresumeprod --share-name func-jbtresume-prod-001 --source ./backend/VisitorCounter/run.ps1 --path "site/wwwroot/VisitorCounter"
-          az storage file upload --account-name stjbtazureresumeprod --share-name func-jbtresume-prod-001 --source ./backend/VisitorCounter/function.json --path "site/wwwroot/VisitorCounter"
+            az storage blob upload-batch --account-name websitetbsm --destination '$web' --source front
     - name: Purge CDN endpoint
       uses: Azure/cli@1.0.4
       with:
